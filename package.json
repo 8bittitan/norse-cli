@@ -9,7 +9,8 @@
   ],
   "files": [
     "lib/",
-    "package.json"
+    "package.json",
+    "LICENSE"
   ],
   "main": "lib/index.js",
   "bin": {
@@ -18,7 +19,6 @@
   "scripts": {
     "build": "tsc && cp -r src/templates lib",
     "build:local": "npm run build && npm link",
-    "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Paul Jankowski",
