@@ -6,7 +6,7 @@ import model from './model'
 
 const collect = (value: any, prevValue: [any]) => prevValue.concat(value)
 
-program.version('1.0.0')
+program.version('1.0.1')
 
 program
   .command('g <modelName>')
