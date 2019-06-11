@@ -57,6 +57,10 @@ class Config {
   public getPrettierConfig() {
     return this.prettierConfig
   }
+
+  public getFileExtension() {
+    return this.config.typescript ? 'ts' : 'js'
+  }
 }
 
 export default Config

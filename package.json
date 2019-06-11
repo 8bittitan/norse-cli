@@ -1,6 +1,6 @@
 {
   "name": "@8bittitan/norse",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Nodejs cli for scaffolding Mongoose models",
   "main": "lib/index.js",
   "bin": {
@@ -9,6 +9,7 @@
   "scripts": {
     "build": "tsc && cp -r src/templates lib",
     "build:local": "npm run build && npm link",
+    "postinstall": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Paul Jankowski",

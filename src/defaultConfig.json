@@ -1,4 +1,5 @@
 {
   "modelsDirectory": "src/db/models",
-  "prettier": false
+  "prettier": false,
+  "typescript": false
 }
