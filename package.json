@@ -1,7 +1,16 @@
 {
   "name": "@8bittitan/norse",
-  "version": "1.0.3",
+  "version": "0.0.1",
   "description": "Nodejs cli for scaffolding Mongoose models",
+  "keywords": [
+    "mongoose",
+    "scaffold",
+    "norse"
+  ],
+  "files": [
+    "lib/",
+    "package.json"
+  ],
   "main": "lib/index.js",
   "bin": {
     "norse": "lib/index.js"
@@ -13,6 +22,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Paul Jankowski",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/8bittitan/norse"
+  },
+  "bugs": "https://github.com/8bittitan/norse/issues",
   "license": "MIT",
   "devDependencies": {
     "@types/fs-extra": "^7.0.0",
