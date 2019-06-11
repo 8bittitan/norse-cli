@@ -7,8 +7,8 @@
     "norse": "lib/index.js"
   },
   "scripts": {
-    "compile": "tsc && cp -r src/templates lib",
-    "build:local": "npm run compile && npm link",
+    "build": "tsc && cp -r src/templates lib",
+    "build:local": "npm run build && npm link",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Paul Jankowski",
