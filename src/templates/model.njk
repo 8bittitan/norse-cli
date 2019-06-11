@@ -1,0 +1,9 @@
+import mongoose from 'mongoose'
+
+const {{ modelName }}Schema = new mongoose.Schema({
+  {% for schemaField in schemaFields %}{{schemaField.name}}: {{schemaField.type}},{% endfor %}
+})
+
+const {{ modelName }} = mongoose.model('{{ modelName }}', {{ modelName }}Schema)
+
+export default {{modelName}}

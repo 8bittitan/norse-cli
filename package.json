@@ -1,0 +1,32 @@
+{
+  "name": "norse",
+  "version": "1.0.0",
+  "description": "Nodejs cli for scaffolding Mongoose models",
+  "main": "lib/index.js",
+  "bin": {
+    "norse": "lib/index.js"
+  },
+  "scripts": {
+    "compile": "tsc && cp -r src/templates lib",
+    "build:local": "npm run compile && npm link",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Paul Jankowski",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/fs-extra": "^7.0.0",
+    "@types/node": "^12.0.7",
+    "@types/nunjucks": "^3.1.1",
+    "@types/prettier": "^1.16.4",
+    "tslint": "^5.17.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.5.1"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "commander": "^2.20.0",
+    "fs-extra": "^8.0.1",
+    "nunjucks": "^3.2.0",
+    "prettier": "^1.18.2"
+  }
+}
