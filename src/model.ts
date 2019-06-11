@@ -9,7 +9,9 @@ import writeFile from './util/writeFile'
 
 export default async (modelName: any, { fields }: any) => {
   const config = new Config()
-  const outPath = path.join(config.getModelsDirectory(), `${modelName}.js`)
+  const ext = config.getFileExtension()
+  const targetDir = config.getModelsDirectory()
+  const outPath = path.join(targetDir, `${modelName}.${ext}`)
   const env = new njk.Environment(
     new njk.FileSystemLoader(path.join(__dirname, 'templates')),
   )
@@ -28,5 +30,5 @@ export default async (modelName: any, { fields }: any) => {
 
   await writeFile(outPath, s)
 
-  console.log(chalk.green(`Wrote file ${modelName}.js`))
+  console.log(chalk.green(`Wrote file ${modelName}.${ext} in \`${targetDir}\``))
 }
