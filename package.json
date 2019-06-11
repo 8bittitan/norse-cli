@@ -1,5 +1,5 @@
 {
-  "name": "norse",
+  "name": "@8bittitan/norse",
   "version": "1.0.0",
   "description": "Nodejs cli for scaffolding Mongoose models",
   "main": "lib/index.js",
