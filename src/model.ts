@@ -25,7 +25,11 @@ export default async (modelName: any, { fields }: any) => {
   let s = env.render('model.njk', { modelName, schemaFields })
 
   if (config.getPrettier()) {
+    console.log(chalk.green('Prettier Started!'))
+
     s = p(s, config.getPrettierConfig())
+
+    console.log(chalk.green('Prettier finished!'))
   }
 
   await writeFile(outPath, s)
