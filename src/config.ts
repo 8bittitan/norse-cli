@@ -12,15 +12,19 @@ interface Config {
 const currentDir = process.cwd()
 
 const getConfig = () => {
-  const userConfig = fs.readFileSync(path.join(currentDir, 'norse.json'), {
-    encoding: 'utf8',
-  })
+  try {
+    const userConfig = fs.readFileSync(path.join(currentDir, 'norse.json'), {
+      encoding: 'utf8',
+    })
 
-  if (userConfig) {
-    return JSON.parse(userConfig)
+    if (userConfig) {
+      return JSON.parse(userConfig)
+    }
+
+    return defaultConfig
+  } catch (err) {
+    return defaultConfig
   }
-
-  return defaultConfig
 }
 
 class Config {
