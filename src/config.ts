@@ -1,11 +1,12 @@
 import fs from 'fs-extra'
 import path from 'path'
 
-import chalk from 'chalk'
 import defaultConfig from './defaultConfig.json'
 
 interface Config {
-  config: any
+  config: {
+    [key: string]: any
+  }
   prettierConfig: any
 }
 
@@ -18,7 +19,13 @@ const getConfig = () => {
     })
 
     if (userConfig) {
-      return JSON.parse(userConfig)
+      const parsedUserConfig = JSON.parse(userConfig)
+
+      return {
+        ...defaultConfig,
+        ...parsedUserConfig,
+        fromUserConfig: true,
+      }
     }
 
     return defaultConfig
@@ -37,25 +44,20 @@ class Config {
   }
 
   public getPrettier() {
-    if (this.config.prettier) {
-      try {
-        const prettierConfig = fs.readFileSync(
-          path.join(currentDir, '.prettierrc'),
-          { encoding: 'utf8' },
-        )
+    try {
+      const prettierUrl = path.join(currentDir, '.prettierrc')
+      const canRunPrettier = !this.config.fromUserConfig || this.config.prettier
+      const prettierConfig = fs.readFileSync(prettierUrl, { encoding: 'utf8' })
 
+      if (prettierConfig && canRunPrettier) {
         this.prettierConfig = JSON.parse(prettierConfig)
-
         return true
-      } catch (err) {
-        console.log(
-          chalk.red('No `.prettierrc` file found, skipping formatting.'),
-        )
+      } else {
         return false
       }
+    } catch (err) {
+      return false
     }
-
-    return false
   }
 
   public getPrettierConfig() {
