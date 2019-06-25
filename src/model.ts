@@ -7,7 +7,7 @@ import parseField from './util/parseField'
 import p from './util/prettier'
 import writeFile from './util/writeFile'
 
-export default async (modelName: any, { fields }: any) => {
+export default async (modelName: any, fields: string[]) => {
   const config = new Config()
   const ext = config.getFileExtension()
   const targetDir = config.getModelsDirectory()
@@ -17,6 +17,8 @@ export default async (modelName: any, { fields }: any) => {
   )
 
   const schemaFields: any = []
+
+  console.log(fields)
 
   fields.forEach((field: string) => {
     schemaFields.push(parseField(field))

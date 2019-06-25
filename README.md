@@ -9,13 +9,13 @@ This CLI is heavily based on the `rails g` command in Ruby on Rails.
 ## API
 
 ```
-norse g [modelName] -f
+norse g [modelName]
 ```
 
-Creates a new model with `modelName` as the name (`norse g Post -f` creates Post.js).
+Creates a new model with `modelName` as the name (`norse g Post` creates Post.js).
 
 ```
-norse g Post -f field:type
+norse g Post field:type
 ```
 
 Creates a `Post` model with `field` as the document attribute and `type` as the attribute type (String, Boolean, etc...)
