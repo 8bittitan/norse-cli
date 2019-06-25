@@ -2,12 +2,12 @@ import chalk from 'chalk'
 import njk from 'nunjucks'
 import path from 'path'
 
-import Config from './config'
-import parseField from './util/parseField'
-import p from './util/prettier'
-import writeFile from './util/writeFile'
+import Config from '../config'
+import parseField from '../util/parseField'
+import p from '../util/prettier'
+import writeFile from '../util/writeFile'
 
-export default async (modelName: any, { fields }: any) => {
+export default async (modelName: string, fields: string[]) => {
   const config = new Config()
   const ext = config.getFileExtension()
   const targetDir = config.getModelsDirectory()
@@ -32,7 +32,9 @@ export default async (modelName: any, { fields }: any) => {
     console.log(chalk.green('Prettier finished!'))
   }
 
-  await writeFile(outPath, s)
-
-  console.log(chalk.green(`Wrote file ${modelName}.${ext} in \`${targetDir}\``))
+  writeFile(outPath, s).then(() => {
+    console.log(
+      chalk.green(`Wrote file ${modelName}.${ext} in \`${targetDir}\``),
+    )
+  })
 }
