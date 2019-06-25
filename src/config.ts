@@ -71,6 +71,10 @@ class Config {
   public getFileExtension() {
     return this.config.typescript ? 'ts' : 'js'
   }
+
+  public getScaffoldDirectories() {
+    return [this.getModelsDirectory(), this.getControllersDirectory()]
+  }
 }
 
 export default Config
