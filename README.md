@@ -18,4 +18,16 @@ Creates a new model with `modelName` as the name (`norse model Post` creates Pos
 norse model Post field:type
 ```
 
-Creates a `Post` model with `field` as the document attribute and `type` as the attribute type (String, Boolean, etc...)
+Creates a `Post` model with `field` as the document attribute and `type` as the attribute type (String, Boolean, etc...).
+
+```
+norse controller [controllerName]
+```
+
+Creates a new controller with the name being `controllerName`Controller (`norse controller post` creates postController.js).
+
+```
+norse controller post create update
+```
+
+Creates a `postController` with the methods of `create()` and `update()`. By default `index`, `create`, `show`, `update` and `destroy` are all created.

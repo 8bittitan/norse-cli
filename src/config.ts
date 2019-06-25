@@ -43,6 +43,10 @@ class Config {
     return this.config.modelsDirectory
   }
 
+  public getControllersDirectory() {
+    return this.config.controllersDirectory
+  }
+
   public getPrettier() {
     try {
       const prettierUrl = path.join(currentDir, '.prettierrc')
