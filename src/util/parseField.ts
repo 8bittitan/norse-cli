@@ -8,6 +8,10 @@ const makeKeyValue = (attributes: string[]) => ({
 export default (field: string) => {
   const s = field.split(':')
 
+  if (s.length === 1) {
+    s[1] = 'String'
+  }
+
   if (s.length !== 2) {
     console.log(
       chalk.red(
