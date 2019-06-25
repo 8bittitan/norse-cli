@@ -2,10 +2,11 @@
 
 import program from 'commander'
 
-import model from './model'
+program
+  .version('0.0.5')
+  .command('model <modelName> [fields...]', 'Create a new Mongoose model')
+  .parse(process.argv)
 
-program.version('0.0.5')
-
-program.command('g <modelName> [fields...]').action(model)
-
-program.parse(process.argv)
+if (program.args.length === 0) {
+  program.help()
+}
