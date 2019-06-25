@@ -1,6 +1,6 @@
 {
   "name": "@8bittitan/norse",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Nodejs cli for scaffolding Mongoose models",
   "keywords": [
     "mongoose",

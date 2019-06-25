@@ -3,7 +3,7 @@
 import program from 'commander'
 
 program
-  .version('0.0.5')
+  .version('0.0.6')
   .command('model <modelName> [fields...]', 'Create a new Mongoose model')
   .command(
     'controller <controllerName> [methods...]',
