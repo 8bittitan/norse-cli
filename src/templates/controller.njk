@@ -1,0 +1,4 @@
+{% for method in methods %}const {{method}} = () => {}
+
+{% endfor %}
+export { {% for method in methods %}{{method}}, {% endfor %}}

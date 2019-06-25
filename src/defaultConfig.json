@@ -1,5 +1,6 @@
 {
   "modelsDirectory": "src/db/models",
+  "controllersDirectory": "src/controllers",
   "prettier": false,
   "typescript": false
 }
