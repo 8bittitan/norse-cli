@@ -1,6 +1,6 @@
 {
   "name": "@8bittitan/norse",
-  "version": "0.0.6",
+  "version": "1.2.0",
   "description": "Nodejs cli for scaffolding Mongoose models",
   "keywords": [
     "mongoose",
@@ -24,9 +24,9 @@
   "author": "Paul Jankowski",
   "repository": {
     "type": "git",
-    "url": "https://github.com/8bittitan/norse"
+    "url": "https://github.com/8bittitan/norse-cli"
   },
-  "bugs": "https://github.com/8bittitan/norse/issues",
+  "bugs": "https://github.com/8bittitan/norse-cli/issues",
   "license": "MIT",
   "devDependencies": {
     "@types/fs-extra": "^7.0.0",
